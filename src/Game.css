@@ -46,12 +46,13 @@ body {
   font-size: calc(10px + 2vmin);
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 32px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 32px;
+  color: white;
 }
 
 .square:focus {
@@ -71,24 +72,53 @@ body {
   margin-left: 20px;
 }
 
-.square {
-  color: white;
+
+.square.win {
+  color: #ff033e;
+  font-size: 15pt;
+  transition: 5s;
 }
-.ResetBtn {
+
+.Btn {
   background-color: #282c34;
-  width: 100px;
-  height: 50px;
   padding: 5px 10px;
   margin: 8px 0;
   box-sizing: border-box;
-  font-size: calc(10px + 2vmin);
   color: white;
   border: 2px solid gray;
   border-radius: 4px;
   text-align: center;
   transition: 0.5s
 }
-.ResetBtn:hover {
+
+.Reset {
+  width: 100px;
+  height: 50px;
+  font-size: calc(10px + 2vmin);
+}
+
+.Btn:hover {
   background-color: darkcyan;
   transition: 0.5s
+}
+
+.Step {
+  width: 300px;
+  height: 30px;
+  font-size: 12pt;
+}
+.Step:hover {
+  background-color: darkcyan;
+  transition: 0.5s
+}
+
+.Step.Choose {
+  background-color: #008080;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.Reverse {
+  width: 150px;
+  height: 30px;
+  font-size: 12pt;
 }
