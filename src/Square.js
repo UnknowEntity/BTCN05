@@ -1,11 +1,12 @@
 import React from 'react';
 
 function Square(props) {
-    return (
-      <button className={props.className} onClick={props.onClick}>
-        {props.value}
-      </button>
-    );
+  const { className, onClick, value } = props;
+  return (
+    <button className={className} onClick={onClick} type="button">
+      {value}
+    </button>
+  );
 }
 
 export default Square;
