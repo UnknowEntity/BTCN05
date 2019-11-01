@@ -3,33 +3,36 @@ import React from 'react';
 
 const Moves = ({ history, stepNumber, onClick, reverse }) => {
   const temp = history.map((step, move) => {
-    const row = step.a + 1;
-    const col = step.b + 1;
-    const desc = move
-      ? `Go to move #${move} Column: ${col} Row: ${row}`
-      : 'Go to game start';
-    let classBtn = 'Step Btn';
-    if (move === stepNumber) {
-      classBtn += ' Choose';
+    if (move % 2 === 0) {
+      const row = step.a + 1;
+      const col = step.b + 1;
+      const desc = move
+        ? `Go to move #${move / 2} Column: ${col} Row: ${row}`
+        : 'Go to game start';
+      let classBtn = 'Step Btn';
+      if (move === stepNumber) {
+        classBtn += ' Choose';
+      }
+      return (
+        <li key={desc}>
+          <button
+            type="button"
+            className={classBtn}
+            value={move}
+            onClick={() => onClick(move)}
+          >
+            {desc}
+          </button>
+        </li>
+      );
     }
-    return (
-      <li key={desc}>
-        <button
-          type="button"
-          className={classBtn}
-          value={move}
-          onClick={() => onClick(move)}
-        >
-          {desc}
-        </button>
-      </li>
-    );
+    return null;
   });
   let moves = temp;
   if (reverse) {
     moves = temp.reverse();
   }
-  return <ol>{moves}</ol>;
+  return <ul>{moves}</ul>;
 };
 
 // Moves.PropTypes = {

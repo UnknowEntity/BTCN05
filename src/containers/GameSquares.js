@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleClick } from '../actions';
+import { handleClick, aIClick } from '../actions';
 import Board from '../components/Board';
 
 const mapStateToProps = state => {
@@ -34,6 +34,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   onClick: (a, b) => {
     dispatch(handleClick(a, b));
+    dispatch(aIClick());
   }
 });
 
